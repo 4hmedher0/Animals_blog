@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load   static %}
+{% block body %}
+<div class="container">
+<div class="row mt-4">
+{% for an in animals %}
+
+<div class="col-md-4">
+<div class="card border-primary mb-3" style="width: 20rem; ">
+
+<img src="{{an.img.url}}" alt="{{an.name}}" width="320rem" height="220rem">
+<div class="card-body ">
+<h5 class="card-title">{{ an.name|upper }}</h5>
+<p class="card-text">{{an.snip|safe}}</p>
+<div class="card-footer bg-transparent border-primary">written by:{{an.author}}</div>
+
+<button type="button" class="btn btn-primary"><a href="{% url 'one_post' an.id %}" class="btn btn-primary">MORE</a>
+</button>
+
+</div>
+</div>
+</div>
+  {% endfor %}
+</div>
+</div>
+  {% endblock %}

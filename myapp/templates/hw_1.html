@@ -1,0 +1,34 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <center>
+    <!link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="utf-8">
+    <title>Home Work</title>
+  </head>
+  <body>
+    <div class="animals">
+   {% for animl in animals %}
+   <div class="animl">
+  
+  <h2>{{animl.name}}</h2>
+  <p>{{animl.kingdom}}</p>
+  <p>{{animl.snip}}</p>
+  <p>{{animl.dob.year}}</p>
+  <p>{{animl.age}}</p>
+
+
+  <h2>____________________________</h2>
+</a>
+ </div>
+   {% endfor  %}
+    </div>
+    <img src="{% static 'star.jpg' %}" alt="STAR IMG">
+    {% block content %}
+
+{% endblock %}
+  </body>
+</center>
+</html>

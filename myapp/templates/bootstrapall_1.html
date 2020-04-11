@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load   static %}
+{% block body %}
+<div class="container">
+<div class="row mt-4">
+{% for an in animals %}
+
+<div class="col-md-4">
+<div class="card" style="width: 20rem; " >
+<img class="card-img-top" src="{% static 'empty.png' %}" alt="Card image cap">
+<div class="card-body ">
+<h5 class="card-title">{{an.name}}</h5>
+<p class="card-text">{{an.snip}}</p>
+<button type="button" class="btn btn-primary"><a href="{% url 'one_post' an.id %}" class="btn btn-primary">MORE</a>
+</button>
+
+</div>
+</div>
+</div>
+  {% endfor %}
+</div>
+</div>
+  {% endblock %}

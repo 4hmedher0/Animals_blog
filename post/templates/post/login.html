@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<form class="" method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+
+  {{login}}
+{% if  request.GET.netx %}
+<input type="hidden" name="next" value="{{request.GET.next}}">
+{% endif %}
+<input type="submit" value="Login">
+
+</form>
+{% endblock body%}
